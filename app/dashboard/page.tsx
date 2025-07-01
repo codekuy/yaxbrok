@@ -674,10 +674,13 @@ export default function Dashboard() {
           <div className="lg:hidden mb-4">
             <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" className="w-full justify-between h-12 bg-transparent">
+                <Button
+                  variant="outline"
+                  className="w-full justify-between h-12 bg-white border-gray-300 hover:bg-gray-50"
+                >
                   <span className="flex items-center gap-2">
                     <User className="w-4 h-4" />
-                    Menu Dashboard
+                    <span className="font-medium">Menu Dashboard</span>
                   </span>
                   <ChevronDown className="w-4 h-4" />
                 </Button>
@@ -706,33 +709,33 @@ export default function Dashboard() {
       </div>
 
       {/* Enhanced Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-12">
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-4 lg:mb-6">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-sky-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
                   <Zap className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                 </div>
-                <span className="font-bold text-xl lg:text-2xl bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent">
+                <span className="font-bold text-xl lg:text-2xl bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent">
                   Konterkuy
                 </span>
               </div>
-              <p className="text-gray-400 leading-relaxed mb-4 lg:mb-6 text-sm lg:text-base">
+              <p className="text-blue-200 leading-relaxed mb-4 lg:mb-6 text-sm lg:text-base">
                 Platform digital terpercaya untuk semua kebutuhan top up game dan voucher digital Anda dengan harga
                 terbaik di Indonesia.
               </p>
               <div className="flex gap-3 lg:gap-4">
                 {[
-                  { icon: Facebook, color: "hover:text-blue-400" },
-                  { icon: Twitter, color: "hover:text-sky-400" },
-                  { icon: Instagram, color: "hover:text-pink-400" },
-                  { icon: Youtube, color: "hover:text-red-400" },
+                  { icon: Facebook, color: "hover:text-blue-300" },
+                  { icon: Twitter, color: "hover:text-cyan-300" },
+                  { icon: Instagram, color: "hover:text-pink-300" },
+                  { icon: Youtube, color: "hover:text-red-300" },
                 ].map((social, index) => (
                   <a
                     key={index}
                     href="#"
-                    className={`w-8 h-8 lg:w-10 lg:h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-gray-700`}
+                    className={`w-8 h-8 lg:w-10 lg:h-10 bg-blue-800/50 rounded-lg flex items-center justify-center text-blue-300 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-blue-700/50`}
                   >
                     <social.icon className="w-4 h-4 lg:w-5 lg:h-5" />
                   </a>
@@ -754,7 +757,7 @@ export default function Dashboard() {
                   <li key={item}>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2 inline-flex items-center group text-sm lg:text-base"
+                      className="text-blue-200 hover:text-white transition-all duration-300 hover:translate-x-2 inline-flex items-center group text-sm lg:text-base"
                     >
                       <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       {item}
@@ -778,7 +781,7 @@ export default function Dashboard() {
                   <li key={item}>
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-white transition-all duration-300 hover:translate-x-2 inline-flex items-center group text-sm lg:text-base"
+                      className="text-blue-200 hover:text-white transition-all duration-300 hover:translate-x-2 inline-flex items-center group text-sm lg:text-base"
                     >
                       <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       {item}
@@ -792,64 +795,64 @@ export default function Dashboard() {
               <h4 className="font-bold text-base lg:text-lg mb-4 lg:mb-6 text-white">Hubungi Kami</h4>
               <div className="space-y-3 lg:space-y-4">
                 <div className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 lg:w-5 lg:h-5 text-sky-400 mt-1 flex-shrink-0" />
+                  <Mail className="w-4 h-4 lg:w-5 lg:h-5 text-cyan-400 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-white font-medium text-sm lg:text-base">Email</p>
-                    <p className="text-gray-400 text-sm">support@konterkuy.com</p>
-                    <p className="text-gray-400 text-sm">info@konterkuy.com</p>
+                    <p className="text-blue-200 text-sm">support@konterkuy.com</p>
+                    <p className="text-blue-200 text-sm">info@konterkuy.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Phone className="w-4 h-4 lg:w-5 lg:h-5 text-sky-400 mt-1 flex-shrink-0" />
+                  <Phone className="w-4 h-4 lg:w-5 lg:h-5 text-cyan-400 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-white font-medium text-sm lg:text-base">WhatsApp</p>
-                    <p className="text-gray-400 text-sm">+62 812-3456-7890</p>
-                    <p className="text-gray-400 text-sm">+62 821-9876-5432</p>
+                    <p className="text-blue-200 text-sm">+62 812-3456-7890</p>
+                    <p className="text-blue-200 text-sm">+62 821-9876-5432</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 lg:w-5 lg:h-5 text-sky-400 mt-1 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 lg:w-5 lg:h-5 text-cyan-400 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-white font-medium text-sm lg:text-base">Alamat</p>
-                    <p className="text-gray-400 text-sm">Jakarta, Indonesia</p>
-                    <p className="text-gray-400 text-sm">Jam Operasional: 24/7</p>
+                    <p className="text-blue-200 text-sm">Jakarta, Indonesia</p>
+                    <p className="text-blue-200 text-sm">Jam Operasional: 24/7</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6 lg:pt-8 mb-6 lg:mb-8">
+          <div className="border-t border-blue-700 pt-6 lg:pt-8 mb-6 lg:mb-8">
             <div className="max-w-md mx-auto text-center">
               <h4 className="font-bold text-base lg:text-lg mb-3 lg:mb-4 text-white">Dapatkan Update Terbaru</h4>
-              <p className="text-gray-400 mb-4 lg:mb-6 text-sm lg:text-base">
+              <p className="text-blue-200 mb-4 lg:mb-6 text-sm lg:text-base">
                 Berlangganan newsletter untuk mendapatkan promo dan update terbaru
               </p>
               <div className="flex flex-col lg:flex-row gap-3">
                 <Input
                   placeholder="Masukkan email Anda"
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-sky-500 h-10 lg:h-12"
+                  className="bg-blue-800/50 border-blue-600 text-white placeholder-blue-300 focus:border-cyan-400 h-10 lg:h-12"
                 />
-                <Button className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 px-6 h-10 lg:h-12 whitespace-nowrap">
+                <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 px-6 h-10 lg:h-12 whitespace-nowrap">
                   Subscribe
                 </Button>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-6 lg:pt-8 text-center">
+          <div className="border-t border-blue-700 pt-6 lg:pt-8 text-center">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 text-sm lg:text-base">
+              <p className="text-blue-200 text-sm lg:text-base">
                 &copy; 2024 Konterkuy. All rights reserved. Made with ❤️ in Indonesia
               </p>
               <div className="flex flex-wrap justify-center gap-4 lg:gap-6 text-xs lg:text-sm">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <a href="#" className="text-blue-200 hover:text-white transition-colors duration-300">
                   Privacy Policy
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <a href="#" className="text-blue-200 hover:text-white transition-colors duration-300">
                   Terms of Service
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
+                <a href="#" className="text-blue-200 hover:text-white transition-colors duration-300">
                   Cookie Policy
                 </a>
               </div>

@@ -213,14 +213,14 @@ export default function Component() {
     <div className="min-h-screen bg-gradient-to-br from-sky-50 via-blue-50 to-cyan-50">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-sky-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-12">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <Zap className="w-5 h-5 text-white" />
+            <div className="flex items-center gap-8 sm:gap-12">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-sky-400 to-blue-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
-                <span className="font-bold text-2xl bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
+                <span className="font-bold text-xl sm:text-2xl bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent">
                   Konterkuy
                 </span>
               </div>
@@ -237,14 +237,18 @@ export default function Component() {
                 ))}
               </nav>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <Button
                 variant="ghost"
-                className="font-medium hover:bg-sky-50 hover:text-sky-600 transition-all duration-300"
+                size="sm"
+                className="font-medium hover:bg-sky-50 hover:text-sky-600 transition-all duration-300 text-sm sm:text-base px-2 sm:px-4"
               >
                 Masuk
               </Button>
-              <Button className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-sm sm:text-base px-3 sm:px-4"
+              >
                 Daftar
               </Button>
             </div>
@@ -474,9 +478,9 @@ export default function Component() {
 
       {/* Hero Slider */}
       {!showProductPage && (
-        <section className="relative px-6 py-8">
+        <section className="relative px-4 sm:px-6 py-6 sm:py-8">
           <div className="max-w-7xl mx-auto">
-            <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
               {slides.map((slide, index) => (
                 <div
                   key={slide.id}
@@ -494,23 +498,23 @@ export default function Component() {
 
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6" />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6" />
               </button>
 
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+              <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-1 sm:gap-2">
                 {slides.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                       index === currentSlide ? "bg-white" : "bg-white/50"
                     }`}
                   />
@@ -523,25 +527,29 @@ export default function Component() {
 
       {/* Categories Section */}
       {!showProductPage && (
-        <section className="px-6 py-16">
+        <section className="px-4 sm:px-6 py-12 sm:py-16">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-xl p-8">
-              <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Kebutuhan Pokok Anda!</h2>
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
+                Kebutuhan Pokok Anda!
+              </h2>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              <div className="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-6">
                 {categories.map((category, index) => (
                   <div
                     key={index}
                     onClick={() => handleCategoryClick(category.name, category.type)}
                     className="group cursor-pointer"
                   >
-                    <div className="flex flex-col items-center space-y-4 p-6 rounded-2xl hover:bg-gray-50 transition-all duration-300 hover:scale-105">
+                    <div className="flex flex-col items-center space-y-2 sm:space-y-4 p-3 sm:p-6 rounded-xl sm:rounded-2xl hover:bg-gray-50 transition-all duration-300 hover:scale-105">
                       <div
-                        className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300`}
+                        className={`w-12 h-12 sm:w-16 sm:h-16 ${category.color} rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300`}
                       >
-                        <span className="text-2xl">{category.icon}</span>
+                        <span className="text-lg sm:text-2xl">{category.icon}</span>
                       </div>
-                      <h3 className="font-semibold text-gray-900 text-center text-sm leading-tight">{category.name}</h3>
+                      <h3 className="font-semibold text-gray-900 text-center text-xs sm:text-sm leading-tight px-1">
+                        {category.name}
+                      </h3>
                     </div>
                   </div>
                 ))}
@@ -553,43 +561,46 @@ export default function Component() {
 
       {/* Top Up Game Section */}
       {!showProductPage && (
-        <section className="px-6 py-16 bg-gradient-to-br from-sky-50 to-blue-50">
+        <section className="px-4 sm:px-6 py-12 sm:py-16 bg-gradient-to-br from-sky-50 to-blue-50">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Top Up Game</h2>
-                <p className="text-gray-600">Top up game favorit dengan harga terbaik dan proses instan</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">Top Up Game</h2>
+                <p className="text-sm sm:text-base text-gray-600">
+                  Top up game favorit dengan harga terbaik dan proses instan
+                </p>
               </div>
               <Button
                 variant="outline"
-                className="group bg-white hover:bg-sky-50 hover:text-sky-600 hover:border-sky-300 transition-all duration-300"
+                size="sm"
+                className="group bg-white hover:bg-sky-50 hover:text-sky-600 hover:border-sky-300 transition-all duration-300 self-start sm:self-auto"
               >
                 Lihat Semua
                 <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-6">
               {games.map((game) => (
                 <Card
                   key={game.id}
                   onClick={() => handleGameClick(game)}
                   className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-0 shadow-md hover:-translate-y-2 bg-white"
                 >
-                  <CardContent className="p-4">
-                    <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 group-hover:scale-105 transition-transform duration-300 mb-3 relative">
+                  <CardContent className="p-2 sm:p-4">
+                    <div className="aspect-square rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 group-hover:scale-105 transition-transform duration-300 mb-2 sm:mb-3 relative">
                       <img
                         src={game.image || "/placeholder.svg"}
                         alt={game.name}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-1 sm:bottom-2 left-1 sm:left-2 right-1 sm:right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <p className="text-xs font-medium truncate">{game.subtitle}</p>
                       </div>
                     </div>
                     <div className="text-center">
-                      <h3 className="font-semibold text-gray-900 text-sm mb-1 group-hover:text-sky-600 transition-colors duration-300">
+                      <h3 className="font-semibold text-gray-900 text-xs sm:text-sm mb-1 group-hover:text-sky-600 transition-colors duration-300 leading-tight">
                         {game.name}
                       </h3>
                       <p className="text-xs text-gray-500">Mulai dari Rp 1.500</p>
@@ -604,23 +615,24 @@ export default function Component() {
 
       {/* Voucher Game Section */}
       {!showProductPage && (
-        <section className="px-6 py-16">
+        <section className="px-4 sm:px-6 py-12 sm:py-16">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4">
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Voucher Game</h2>
-                <p className="text-gray-600">Voucher game dan platform digital terpopuler</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">Voucher Game</h2>
+                <p className="text-sm sm:text-base text-gray-600">Voucher game dan platform digital terpopuler</p>
               </div>
               <Button
                 variant="outline"
-                className="group bg-white hover:bg-sky-50 hover:text-sky-600 hover:border-sky-300 transition-all duration-300"
+                size="sm"
+                className="group bg-white hover:bg-sky-50 hover:text-sky-600 hover:border-sky-300 transition-all duration-300 self-start sm:self-auto"
               >
                 Lihat Semua
                 <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-6">
               {[
                 {
                   id: 1,
@@ -736,20 +748,20 @@ export default function Component() {
                   onClick={() => handleGameClick(voucher)}
                   className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-0 shadow-md hover:-translate-y-2 bg-white"
                 >
-                  <CardContent className="p-4">
-                    <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 group-hover:scale-105 transition-transform duration-300 mb-3 relative">
+                  <CardContent className="p-2 sm:p-4">
+                    <div className="aspect-square rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 group-hover:scale-105 transition-transform duration-300 mb-2 sm:mb-3 relative">
                       <img
                         src={voucher.image || "/placeholder.svg"}
                         alt={voucher.name}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-1 sm:bottom-2 left-1 sm:left-2 right-1 sm:right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <p className="text-xs font-medium truncate">{voucher.subtitle}</p>
                       </div>
                     </div>
                     <div className="text-center">
-                      <h3 className="font-semibold text-gray-900 text-sm mb-1 group-hover:text-sky-600 transition-colors duration-300">
+                      <h3 className="font-semibold text-gray-900 text-xs sm:text-sm mb-1 group-hover:text-sky-600 transition-colors duration-300 leading-tight">
                         {voucher.name}
                       </h3>
                       <p className="text-xs text-gray-500">Mulai dari {voucher.price}</p>
@@ -764,25 +776,27 @@ export default function Component() {
 
       {/* Category Modal */}
       <Dialog open={showCategoryModal} onOpenChange={setShowCategoryModal}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="w-[95vw] max-w-2xl max-h-[90vh] overflow-y-auto mx-4 sm:mx-auto">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-center">Kamu lagi perlu apa nih ?</DialogTitle>
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-center">Kamu lagi perlu apa nih ?</DialogTitle>
           </DialogHeader>
 
-          <div className="space-y-6">
-            <div className="grid grid-cols-6 gap-4">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-4">
               {categories.map((category, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col items-center space-y-2 p-3 rounded-xl cursor-pointer transition-all duration-300 ${
+                  className={`flex flex-col items-center space-y-1 sm:space-y-2 p-2 sm:p-3 rounded-xl cursor-pointer transition-all duration-300 ${
                     selectedCategory === category.name ? "bg-blue-100 border-2 border-blue-500" : "hover:bg-gray-50"
                   }`}
                   onClick={() => setSelectedCategory(category.name)}
                 >
-                  <div className={`w-12 h-12 ${category.color} rounded-xl flex items-center justify-center`}>
-                    <span className="text-lg">{category.icon}</span>
+                  <div
+                    className={`w-10 h-10 sm:w-12 sm:h-12 ${category.color} rounded-xl flex items-center justify-center`}
+                  >
+                    <span className="text-base sm:text-lg">{category.icon}</span>
                   </div>
-                  <span className="text-xs font-medium text-center">{category.name}</span>
+                  <span className="text-xs font-medium text-center leading-tight px-1">{category.name}</span>
                 </div>
               ))}
             </div>
@@ -792,31 +806,31 @@ export default function Component() {
                 placeholder="Masukan No Ponsel Anda"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                className="h-14 pr-20 text-lg"
+                className="h-12 sm:h-14 pr-16 sm:pr-20 text-base sm:text-lg"
               />
-              <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                <img src="/placeholder.svg?height=30&width=60" alt="Telkomsel" className="h-8" />
+              <div className="absolute right-2 sm:right-3 top-1/2 transform -translate-y-1/2">
+                <img src="/placeholder.svg?height=30&width=60" alt="Telkomsel" className="h-6 sm:h-8" />
               </div>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {pulsaProducts.map((product, index) => (
                 <div
                   key={index}
                   onClick={() => handleProductSelect(product)}
-                  className="flex items-center justify-between p-4 border border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all duration-300"
+                  className="flex items-center justify-between p-3 sm:p-4 border border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all duration-300"
                 >
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{product.name}</h4>
-                    <p className="text-lg font-bold text-gray-700">{product.nominal}</p>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base truncate">{product.name}</h4>
+                    <p className="text-base sm:text-lg font-bold text-gray-700">{product.nominal}</p>
                   </div>
-                  <div className="text-right">
-                    <p className="text-sm text-blue-600 font-medium">Harga :</p>
-                    <div className="flex items-center gap-2">
+                  <div className="text-right ml-4">
+                    <p className="text-xs sm:text-sm text-blue-600 font-medium">Harga :</p>
+                    <div className="flex items-center gap-1 sm:gap-2 justify-end">
                       {product.originalPrice && (
-                        <span className="text-sm text-red-500 line-through">{product.originalPrice}</span>
+                        <span className="text-xs sm:text-sm text-red-500 line-through">{product.originalPrice}</span>
                       )}
-                      <span className="text-lg font-bold text-blue-600">{product.price}</span>
+                      <span className="text-sm sm:text-lg font-bold text-blue-600">{product.price}</span>
                     </div>
                   </div>
                 </div>
@@ -824,7 +838,7 @@ export default function Component() {
             </div>
 
             <Button
-              className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold"
+              className="w-full h-10 sm:h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base"
               onClick={() => {
                 setShowCategoryModal(false)
                 setShowPaymentModal(true)
@@ -838,28 +852,28 @@ export default function Component() {
 
       {/* Payment Modal */}
       <Dialog open={showPaymentModal} onOpenChange={setShowPaymentModal}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+        <DialogContent className="w-[95vw] max-w-2xl max-h-[90vh] overflow-y-auto mx-4 sm:mx-auto">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-center">Pilih Metode Pembayaran :</DialogTitle>
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-center">Pilih Metode Pembayaran :</DialogTitle>
           </DialogHeader>
 
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {Object.entries(modalPaymentMethods).map(([category, methods]) => (
               <div key={category}>
-                <h3 className="font-bold text-lg mb-4">{category}</h3>
-                <div className="space-y-3">
+                <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">{category}</h3>
+                <div className="space-y-2 sm:space-y-3">
                   {methods.map((method, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between p-4 border border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all duration-300"
+                      className="flex items-center justify-between p-3 sm:p-4 border border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 cursor-pointer transition-all duration-300"
                     >
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl">{method.logo}</span>
-                        <span className="font-semibold">{method.name}</span>
+                      <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                        <span className="text-xl sm:text-2xl flex-shrink-0">{method.logo}</span>
+                        <span className="font-semibold text-sm sm:text-base truncate">{method.name}</span>
                       </div>
-                      <div className="text-right">
-                        <p className="text-sm text-blue-600">Total</p>
-                        <p className="font-bold text-blue-600">{method.total}</p>
+                      <div className="text-right ml-4">
+                        <p className="text-xs sm:text-sm text-blue-600">Total</p>
+                        <p className="font-bold text-blue-600 text-sm sm:text-base">{method.total}</p>
                       </div>
                     </div>
                   ))}
@@ -867,66 +881,68 @@ export default function Component() {
               </div>
             ))}
 
-            <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold">Lanjut</Button>
+            <Button className="w-full h-10 sm:h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base">
+              Lanjut
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
 
       {/* Why Choose Us - New Design */}
       {!showProductPage && (
-        <section className="px-6 py-20 bg-white relative overflow-hidden">
+        <section className="px-4 sm:px-6 py-16 sm:py-20 bg-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-cyan-50/50"></div>
           <div className="max-w-7xl mx-auto relative">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="text-center mb-12 sm:mb-16">
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 sm:px-4 py-2 rounded-full text-sm font-medium mb-4 sm:mb-6">
                 <Star className="w-4 h-4" />
                 Dipercaya Jutaan Pengguna
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Mengapa Memilih Konterkuy?</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Mengapa Memilih Konterkuy?</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
                 Platform digital terdepan dengan layanan terlengkap dan harga terjangkau
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
               {[
                 {
-                  icon: <Shield className="w-12 h-12" />,
+                  icon: <Shield className="w-8 h-8 sm:w-12 sm:h-12" />,
                   title: "100% Aman & Terpercaya",
                   desc: "Transaksi dijamin aman dengan sistem keamanan berlapis dan sertifikasi resmi",
                   color: "bg-green-500",
                   stats: "99.9% Success Rate",
                 },
                 {
-                  icon: <Clock className="w-12 h-12" />,
+                  icon: <Clock className="w-8 h-8 sm:w-12 sm:h-12" />,
                   title: "Proses Super Cepat",
                   desc: "Pemrosesan otomatis dalam hitungan detik dengan teknologi terdepan",
                   color: "bg-blue-500",
                   stats: "< 30 Detik",
                 },
                 {
-                  icon: <Star className="w-12 h-12" />,
+                  icon: <Star className="w-8 h-8 sm:w-12 sm:h-12" />,
                   title: "Harga Terjangkau",
                   desc: "Dapatkan harga terbaik dan promo menarik setiap harinya",
                   color: "bg-purple-500",
                   stats: "Hemat 20%",
                 },
                 {
-                  icon: <Headphones className="w-12 h-12" />,
+                  icon: <Headphones className="w-8 h-8 sm:w-12 sm:h-12" />,
                   title: "Customer Service 24/7",
                   desc: "Tim support profesional siap membantu kapan saja Anda membutuhkan",
                   color: "bg-orange-500",
                   stats: "24/7 Online",
                 },
                 {
-                  icon: <Award className="w-12 h-12" />,
+                  icon: <Award className="w-8 h-8 sm:w-12 sm:h-12" />,
                   title: "Berpengalaman",
                   desc: "Telah melayani jutaan transaksi dengan tingkat kepuasan tinggi",
                   color: "bg-red-500",
                   stats: "1M+ Users",
                 },
                 {
-                  icon: <Zap className="w-12 h-12" />,
+                  icon: <Zap className="w-8 h-8 sm:w-12 sm:h-12" />,
                   title: "Teknologi Terdepan",
                   desc: "Menggunakan teknologi cloud terbaru untuk performa optimal",
                   color: "bg-cyan-500",
@@ -935,46 +951,45 @@ export default function Component() {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
+                  className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100"
                 >
-                  <div className="absolute top-6 right-6">
+                  <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
                     <span className="text-xs font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded-full">
                       {feature.stats}
                     </span>
                   </div>
                   <div
-                    className={`w-16 h-16 ${feature.color} rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-12 h-12 sm:w-16 sm:h-16 ${feature.color} rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
                   >
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
             </div>
 
             <div className="text-center">
-              <div className="inline-flex items-center gap-8 bg-white rounded-2xl p-8 shadow-lg">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-1">1M+</div>
-                  <div className="text-gray-600 text-sm">Pengguna Aktif</div>
-                </div>
-                <div className="w-px h-12 bg-gray-200"></div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-1">50K+</div>
-                  <div className="text-gray-600 text-sm">Transaksi Harian</div>
-                </div>
-                <div className="w-px h-12 bg-gray-200"></div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600 mb-1">99.9%</div>
-                  <div className="text-gray-600 text-sm">Success Rate</div>
-                </div>
-                <div className="w-px h-12 bg-gray-200"></div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-600 mb-1">24/7</div>
-                  <div className="text-gray-600 text-sm">Support</div>
+              <div className="bg-white rounded-2xl p-4 sm:p-8 shadow-lg max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1">1M+</div>
+                    <div className="text-gray-600 text-xs sm:text-sm">Pengguna Aktif</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">50K+</div>
+                    <div className="text-gray-600 text-xs sm:text-sm">Transaksi Harian</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-1">99.9%</div>
+                    <div className="text-gray-600 text-xs sm:text-sm">Success Rate</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-orange-600 mb-1">24/7</div>
+                    <div className="text-gray-600 text-xs sm:text-sm">Support</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -984,7 +999,7 @@ export default function Component() {
 
       {/* Statistics */}
       {!showProductPage && (
-        <section className="px-6 py-20 bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-600 text-white relative overflow-hidden">
+        <section className="px-4 sm:px-6 py-16 sm:py-20 bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-600 text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-20">
             <div
               className="w-full h-full"
@@ -995,11 +1010,13 @@ export default function Component() {
             ></div>
           </div>
           <div className="max-w-7xl mx-auto relative">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Dipercaya Jutaan Pengguna</h2>
-              <p className="text-sky-100 text-lg">Bergabunglah dengan komunitas digital terbesar di Indonesia</p>
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Dipercaya Jutaan Pengguna</h2>
+              <p className="text-sky-100 text-base sm:text-lg">
+                Bergabunglah dengan komunitas digital terbesar di Indonesia
+              </p>
             </div>
-            <div className="grid md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
               {[
                 { number: "1M+", label: "Pengguna Aktif", desc: "Terdaftar di platform" },
                 { number: "50K+", label: "Transaksi Harian", desc: "Diproses setiap hari" },
@@ -1007,11 +1024,11 @@ export default function Component() {
                 { number: "24/7", label: "Layanan Pelanggan", desc: "Siap membantu Anda" },
               ].map((stat, index) => (
                 <div key={index} className="group">
-                  <div className="text-5xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+                  <div className="text-3xl sm:text-5xl font-bold mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
                     {stat.number}
                   </div>
-                  <div className="text-xl font-semibold mb-2">{stat.label}</div>
-                  <div className="text-sky-100 text-sm">{stat.desc}</div>
+                  <div className="text-base sm:text-xl font-semibold mb-1 sm:mb-2">{stat.label}</div>
+                  <div className="text-sky-100 text-xs sm:text-sm">{stat.desc}</div>
                 </div>
               ))}
             </div>
@@ -1022,22 +1039,22 @@ export default function Component() {
       {/* Enhanced Footer - New Blue Theme */}
       {!showProductPage && (
         <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
-          <div className="max-w-7xl mx-auto px-6 py-16">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
               <div className="lg:col-span-1">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <Zap className="w-6 h-6 text-white" />
+                <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
+                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <span className="font-bold text-2xl bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent">
+                  <span className="font-bold text-xl sm:text-2xl bg-gradient-to-r from-cyan-400 to-blue-300 bg-clip-text text-transparent">
                     Konterkuy
                   </span>
                 </div>
-                <p className="text-blue-200 leading-relaxed mb-6">
+                <p className="text-blue-200 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                   Platform digital terpercaya untuk semua kebutuhan top up game dan voucher digital Anda dengan harga
                   terbaik di Indonesia.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex gap-3 sm:gap-4">
                   {[
                     { icon: Facebook, color: "hover:text-blue-300" },
                     { icon: Twitter, color: "hover:text-cyan-300" },
@@ -1047,17 +1064,17 @@ export default function Component() {
                     <a
                       key={index}
                       href="#"
-                      className={`w-10 h-10 bg-blue-800/50 rounded-lg flex items-center justify-center text-blue-300 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-blue-700/50`}
+                      className={`w-8 h-8 sm:w-10 sm:h-10 bg-blue-800/50 rounded-lg flex items-center justify-center text-blue-300 ${social.color} transition-all duration-300 hover:scale-110 hover:bg-blue-700/50`}
                     >
-                      <social.icon className="w-5 h-5" />
+                      <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </a>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h4 className="font-bold text-lg mb-6 text-white">Layanan Kami</h4>
-                <ul className="space-y-3">
+                <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6 text-white">Layanan Kami</h4>
+                <ul className="space-y-2 sm:space-y-3">
                   {[
                     "Top Up Game Mobile",
                     "Voucher Digital",
@@ -1069,9 +1086,9 @@ export default function Component() {
                     <li key={item}>
                       <a
                         href="#"
-                        className="text-blue-200 hover:text-white transition-all duration-300 hover:translate-x-2 inline-flex items-center group"
+                        className="text-blue-200 hover:text-white transition-all duration-300 hover:translate-x-2 inline-flex items-center group text-sm sm:text-base"
                       >
-                        <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         {item}
                       </a>
                     </li>
@@ -1080,8 +1097,8 @@ export default function Component() {
               </div>
 
               <div>
-                <h4 className="font-bold text-lg mb-6 text-white">Bantuan & Dukungan</h4>
-                <ul className="space-y-3">
+                <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6 text-white">Bantuan & Dukungan</h4>
+                <ul className="space-y-2 sm:space-y-3">
                   {[
                     "Pusat Bantuan",
                     "Cara Pembelian",
@@ -1093,9 +1110,9 @@ export default function Component() {
                     <li key={item}>
                       <a
                         href="#"
-                        className="text-blue-200 hover:text-white transition-all duration-300 hover:translate-x-2 inline-flex items-center group"
+                        className="text-blue-200 hover:text-white transition-all duration-300 hover:translate-x-2 inline-flex items-center group text-sm sm:text-base"
                       >
-                        <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         {item}
                       </a>
                     </li>
@@ -1104,56 +1121,60 @@ export default function Component() {
               </div>
 
               <div>
-                <h4 className="font-bold text-lg mb-6 text-white">Hubungi Kami</h4>
-                <div className="space-y-4">
+                <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6 text-white">Hubungi Kami</h4>
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-start gap-3">
-                    <Mail className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-white font-medium">Email</p>
-                      <p className="text-blue-200">support@konterkuy.com</p>
-                      <p className="text-blue-200">info@konterkuy.com</p>
+                      <p className="text-white font-medium text-sm sm:text-base">Email</p>
+                      <p className="text-blue-200 text-sm">support@konterkuy.com</p>
+                      <p className="text-blue-200 text-sm">info@konterkuy.com</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Phone className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-white font-medium">WhatsApp</p>
-                      <p className="text-blue-200">+62 812-3456-7890</p>
-                      <p className="text-blue-200">+62 821-9876-5432</p>
+                      <p className="text-white font-medium text-sm sm:text-base">WhatsApp</p>
+                      <p className="text-blue-200 text-sm">+62 812-3456-7890</p>
+                      <p className="text-blue-200 text-sm">+62 821-9876-5432</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="text-white font-medium">Alamat</p>
-                      <p className="text-blue-200">Jakarta, Indonesia</p>
-                      <p className="text-blue-200">Jam Operasional: 24/7</p>
+                      <p className="text-white font-medium text-sm sm:text-base">Alamat</p>
+                      <p className="text-blue-200 text-sm">Jakarta, Indonesia</p>
+                      <p className="text-blue-200 text-sm">Jam Operasional: 24/7</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="border-t border-blue-700 pt-8 mb-8">
+            <div className="border-t border-blue-700 pt-6 sm:pt-8 mb-6 sm:mb-8">
               <div className="max-w-md mx-auto text-center">
-                <h4 className="font-bold text-lg mb-4 text-white">Dapatkan Update Terbaru</h4>
-                <p className="text-blue-200 mb-6">Berlangganan newsletter untuk mendapatkan promo dan update terbaru</p>
-                <div className="flex gap-3">
+                <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4 text-white">Dapatkan Update Terbaru</h4>
+                <p className="text-blue-200 mb-4 sm:mb-6 text-sm sm:text-base">
+                  Berlangganan newsletter untuk mendapatkan promo dan update terbaru
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
                   <Input
                     placeholder="Masukkan email Anda"
-                    className="bg-blue-800/50 border-blue-600 text-white placeholder-blue-300 focus:border-cyan-400"
+                    className="bg-blue-800/50 border-blue-600 text-white placeholder-blue-300 focus:border-cyan-400 h-10 sm:h-12"
                   />
-                  <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 px-6">
+                  <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 px-6 h-10 sm:h-12 whitespace-nowrap">
                     Subscribe
                   </Button>
                 </div>
               </div>
             </div>
 
-            <div className="border-t border-blue-700 pt-8 text-center">
+            <div className="border-t border-blue-700 pt-6 sm:pt-8 text-center">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p className="text-blue-200">&copy; 2024 Konterkuy. All rights reserved. Made with ❤️ in Indonesia</p>
-                <div className="flex gap-6 text-sm">
+                <p className="text-blue-200 text-sm sm:text-base">
+                  &copy; 2024 Konterkuy. All rights reserved. Made with ❤️ in Indonesia
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
                   <a href="#" className="text-blue-200 hover:text-white transition-colors duration-300">
                     Privacy Policy
                   </a>
